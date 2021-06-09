@@ -4,9 +4,13 @@ function App() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
+  const submitHandler = e => {
+    e.preventDefault();
+    alert(`Name: ${ name } Email: ${ email }`)
+  }
   return (
     <div className="App">
-      <form action="">
+      <form onClick={  }>
         <div>
           <label>Name</label>
           <input 
@@ -23,6 +27,7 @@ function App() {
             type="text" 
           />
         </div>
+        <button>Submit</button>
       </form>
     </div>
   );
