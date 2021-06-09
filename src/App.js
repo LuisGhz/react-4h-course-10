@@ -7,6 +7,8 @@ function App() {
   const submitHandler = e => {
     e.preventDefault();
     alert(`Name: ${ name } Email: ${ email }`)
+    setName('');
+    setEmail('');
   }
   return (
     <div className="App">
