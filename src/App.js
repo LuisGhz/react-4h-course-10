@@ -10,7 +10,7 @@ function App() {
   }
   return (
     <div className="App">
-      <form onClick={  }>
+      <form onSubmit={ submitHandler }>
         <div>
           <label>Name</label>
           <input 
