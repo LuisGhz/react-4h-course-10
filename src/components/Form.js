@@ -1,14 +1,14 @@
-import { useState } from 'react';
+import useInput from 'customhook/useInput';
 
 const Form = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+  const [name, bindName, clearName] = useInput('');
+  const [email, bindEmail, clearEmail] = useInput('');
 
   const submitHandler = e => {
     e.preventDefault();
     alert(`Name: ${ name } Email: ${ email }`)
-    setName('');
-    setEmail('');
+    clearName();
+    clearEmail();
   }
 
   return (
@@ -17,16 +17,14 @@ const Form = () => {
         <div>
           <label>Name</label>
           <input 
-            value={ name }
-            onChange={ e => setName(e.target.value) }
+            { ...bindName }
             type="text" 
           />
         </div>
         <div>
           <label>Email</label>
           <input 
-            value={ email }
-            onChange={ e => setEmail(e.target.value) }
+            { ...bindEmail }
             type="text" 
           />
         </div>
